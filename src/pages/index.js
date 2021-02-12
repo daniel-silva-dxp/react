@@ -1,16 +1,15 @@
 import React, { Component } from "react";
-import headset from "../image/headphone.svg";
+import Header from "../components/header";
 
 import "./main.css";
 
 export default class Home extends Component {
   render() {
     return (
-      <div className="container">
-        <h1>Daniel Silva!!</h1>
-        <img src={headset} alt="" srcset="" />
-        <p>{10 * 20}</p>
-      </div>
+      <React.Fragment>
+        <Header />
+        <div className="container"></div>
+      </React.Fragment>
     );
   }
 }

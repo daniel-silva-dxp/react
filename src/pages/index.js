@@ -9,6 +9,7 @@ export default class Home extends Component {
       <div className="container">
         <h1>Daniel Silva!!</h1>
         <img src={headset} alt="" srcset="" />
+        <p>{10 * 20}</p>
       </div>
     );
   }

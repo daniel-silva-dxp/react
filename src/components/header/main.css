@@ -1,0 +1,21 @@
+header {
+  width: 100vw;
+  height: 250px;
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.15);
+}
+.box {
+  background-color: #fff;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box h1 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #3f3f3f;
+}

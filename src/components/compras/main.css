@@ -1,0 +1,11 @@
+.ativo,
+.inativo {
+  font-size: 14px;
+  font-weight: 700;
+}
+.ativo {
+  color: green;
+}
+.inativo {
+  color: red;
+}

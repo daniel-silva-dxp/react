@@ -75,9 +75,7 @@ export class Compras extends Component {
             <strong>
               {this.removerFormatacaoMoeda(
                 this.getTotalDeGastos(cliente.compras)
-              ) > 10000.0
-                ? "Você está gastando muito!"
-                : ""}
+              ) > 10000.0 && "Você está gastando muito!"}
             </strong>
           </p>
         </div>

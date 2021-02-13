@@ -71,13 +71,8 @@ export class Compras extends Component {
             <strong>Total de gastos: </strong>
             {this.getTotalDeGastos(cliente.compras)}
           </p>
-          <p>
-            <strong>
-              {this.removerFormatacaoMoeda(
-                this.getTotalDeGastos(cliente.compras)
-              ) > 10000.0 && "Você está gastando muito!"}
-            </strong>
-          </p>
+          {this.removerFormatacaoMoeda(this.getTotalDeGastos(cliente.compras)) >
+            10000.0 && <strong>Você está gastando muito!</strong>}
         </div>
       </React.Fragment>
     );

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Arr from "../components/arrays";
 import Compras from "../components/compras";
 import Header from "../components/header";
 
@@ -11,6 +12,7 @@ export default class Home extends Component {
         <Header />
         <div className="container">
           <Compras />
+          <Arr />
         </div>
       </React.Fragment>
     );

@@ -8,6 +8,8 @@ export default class App extends Component {
 
     this.state = {
       token: "Carregando",
+      nome: "Carregando",
+      idade: "Carregando",
     };
     var firebaseConfig = {};
     // Initialize Firebase
@@ -25,11 +27,25 @@ export default class App extends Component {
           token: snapshot.val(),
         });
       });
+
+    firebase
+      .database()
+      .ref("users")
+      .child(1)
+      .on("value", (snapshot) => {
+        this.setState({
+          nome: snapshot.val().nome,
+          idade: snapshot.val().idade,
+        });
+      });
   }
   render() {
+    const { token, nome, idade } = this.state;
     return (
       <div>
-        <h1>{this.state.token}</h1>
+        <h1>Token: {token}</h1>
+        <h1>Nome: {nome}</h1>
+        <h1>Idade: {idade}</h1>
         <Home />
       </div>
     );

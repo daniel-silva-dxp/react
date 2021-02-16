@@ -7,46 +7,65 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      token: "Carregando",
       nome: "Carregando",
       idade: "Carregando",
+      inputValue: "",
     };
+
+    this.cadastrar = this.cadastrar.bind(this);
+
     var firebaseConfig = {};
     // Initialize Firebase
     if (!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
     } else {
-      firebase.app(); // if already initialized, use that one
+      firebase.app();
     }
 
-    firebase
-      .database()
-      .ref("token")
-      .on("value", (snapshot) => {
-        this.setState({
-          token: snapshot.val(),
-        });
-      });
+    // Remove uma database
+    firebase.database().ref("token").remove();
 
     firebase
       .database()
       .ref("users")
       .child(1)
-      .on("value", (snapshot) => {
+      .once("value")
+      .then((snapshot) => {
         this.setState({
           nome: snapshot.val().nome,
           idade: snapshot.val().idade,
         });
       });
   }
+
+  cadastrar(e) {
+    // Inserir/Editar
+    firebase.database().ref("token2").set(this.state.inputValue);
+    e.preventDefault();
+  }
   render() {
-    const { token, nome, idade } = this.state;
+    const { nome, idade, inputValue } = this.state;
     return (
       <div>
-        <h1>Token: {token}</h1>
+        <Home />
+        <br />
         <h1>Nome: {nome}</h1>
         <h1>Idade: {idade}</h1>
-        <Home />
+        <form action="" onSubmit={this.cadastrar}>
+          <label htmlFor="token">Token: </label>
+          <input
+            type="text"
+            name="token"
+            id="token"
+            value={inputValue}
+            onChange={(e) => {
+              this.setState({
+                inputValue: e.target.value,
+              });
+            }}
+          />
+          <button type="submit">Cadastrar</button>
+        </form>
       </div>
     );
   }

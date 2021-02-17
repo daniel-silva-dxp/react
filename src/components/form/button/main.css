@@ -9,7 +9,7 @@ button {
 }
 button.btn {
   display: inline-block;
-  border: 1px solid #232323;
+  border: 1px solid #6c50c8;
   border-radius: 3px;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
@@ -20,11 +20,11 @@ button.btn-medium {
   padding: 0 15px;
   font-size: 14px;
 }
-button.btn-dark {
+button.btn-purple {
   color: #fff;
-  background: #232323;
+  background: #6c50c8;
 }
-button.btn-dark:hover {
+button.btn-purple:hover {
   background: #fff;
-  color: #232323;
+  color: #6c50c8;
 }

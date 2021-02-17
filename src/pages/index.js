@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Button from "../components/form/button";
-import Header from "../components/header";
+import Form from "../components/form";
 
 import "./main.css";
 
@@ -8,10 +7,9 @@ export default class Home extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
         <div className="container">
           <div className="content">
-            <Button>Cadastrar</Button>
+            <Form />
           </div>
         </div>
       </React.Fragment>

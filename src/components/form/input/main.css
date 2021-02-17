@@ -1,0 +1,28 @@
+input {
+  outline: 0;
+  width: 100%;
+  height: 35px;
+  margin-bottom: 10px;
+  padding: 0px 15px;
+  border-radius: 3px 0 0 3px;
+  border: 1px solid #4f456c;
+  background: #4f456c;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 12px;
+  color: #fff;
+}
+::-webkit-input-placeholder {
+  color: #c4c4c4;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #c4c4c4;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #c4c4c4;
+}
+:-ms-input-placeholder {
+  color: #c4c4c4;
+}

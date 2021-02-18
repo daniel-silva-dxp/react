@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Home from "../pages";
+import Home from "../Pages";
 
 export default class App extends Component {
   render() {

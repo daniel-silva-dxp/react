@@ -1,12 +1,17 @@
 import React, { Component } from "react";
-import Home from "../Pages";
+import { BrowserRouter, Router } from "react-router-dom";
+import Footer from "../components/footer";
+import Header from "../components/header";
+import Routes from "../routes";
 
 export default class App extends Component {
   render() {
     return (
-      <div>
-        <Home />
-      </div>
+      <BrowserRouter>
+        <Header />
+        <Routes />
+        <Footer />
+      </BrowserRouter>
     );
   }
 }

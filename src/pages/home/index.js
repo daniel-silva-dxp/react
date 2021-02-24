@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./main.css";
+import "./style.js";
 
 export default class Home extends Component {
   render() {

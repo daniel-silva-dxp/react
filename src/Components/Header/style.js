@@ -19,12 +19,16 @@ export const HeaderContent = styled.header`
 
     nav {
       ul {
-        width: 100px;
+        width: 150px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
 
         li {
           cursor: pointer;
+          transition: all 0.2s;
+          &:hover {
+            color: #75dab4;
+          }
         }
       }
     }

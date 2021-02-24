@@ -22,6 +22,10 @@ export const HeaderContent = styled.header`
         width: 100px;
         display: flex;
         justify-content: space-around;
+
+        li {
+          cursor: pointer;
+        }
       }
     }
   }

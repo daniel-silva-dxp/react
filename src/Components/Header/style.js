@@ -5,9 +5,7 @@ export const HeaderContent = styled.header`
   height: 60px;
   background-color: #fff;
 
-  -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  border-bottom: 4px solid #75dab4;
 
   .container {
     height: 100%;

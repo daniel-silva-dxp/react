@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import { HeaderContent } from "./style";
 
-const Header = () => {
+const Header = ({ logout }) => {
   return (
     <HeaderContent>
       <div className="container">
@@ -42,7 +42,7 @@ const Header = () => {
             </li>
             <li data-tip data-for="singout">
               <Link to="/logout">
-                <FaSignOutAlt />
+                <FaSignOutAlt onClick={logout} />
                 <ReactTooltip
                   id="singout"
                   textColor="#fff"

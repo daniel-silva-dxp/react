@@ -1,13 +1,26 @@
 import React from "react";
 import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
+import { FaGooglePlusG } from "react-icons/fa";
+
 import ButtonIcons from "../../components/button-icons";
-import { FaFacebookF, FaGooglePlusG } from "react-icons/fa";
-
-import { Content, Wrap, Paragraphy } from "./style";
-import Form from "../../components/form-login";
 import FormRegister from "../../components/form-register";
+import Form from "../../components/form-login";
 
-const Login = () => {
+import firebase from "../../firebaseConfig";
+import { Content, Wrap, Paragraphy } from "./style";
+
+const Login = ({ onReceiveGoogle, actionLoginDataFacebook }) => {
+  const actionLoginGoogle = async () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const result = await firebase.auth().signInWithPopup(provider);
+
+    if (result) {
+      onReceiveGoogle(result.user);
+    } else {
+      console.log("ERROR");
+    }
+  };
+
   return (
     <BrowserRouter>
       <Switch>
@@ -31,12 +44,11 @@ const Login = () => {
               <Paragraphy>---------- OU ----------</Paragraphy>
               <div className="form-control">
                 <span>
-                  <ButtonIcons bgColor="#475993" bgColorHover="#55659b">
-                    <FaFacebookF />
-                  </ButtonIcons>
-                </span>
-                <span>
-                  <ButtonIcons bgColor="#c53e3e" bgColorHover="#eb5f5d">
+                  <ButtonIcons
+                    bgColor="#c53e3e"
+                    bgColorHover="#eb5f5d"
+                    onClick={actionLoginGoogle}
+                  >
                     <FaGooglePlusG />
                   </ButtonIcons>
                 </span>

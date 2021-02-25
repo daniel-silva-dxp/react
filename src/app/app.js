@@ -1,17 +1,35 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import Login from "../pages/login";
 import Routes from "../routes";
 
-export default class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Header />
-        <Routes />
-        <Footer />
-      </BrowserRouter>
-    );
+const App = () => {
+  const [user, setUser] = React.useState(null);
+
+  const actionLoginDataGoogle = async (u) => {
+    console.log(u);
+    const newUser = {
+      id: u.uid,
+      name: u.displayName,
+      avatar: u.photoURL,
+    };
+
+    setUser(newUser);
+  };
+
+  if (user === null) {
+    return <Login onReceiveGoogle={actionLoginDataGoogle} />;
   }
-}
+
+  return (
+    <BrowserRouter>
+      <Header logout={() => setUser(null)} />
+      <Routes />
+      <Footer />
+    </BrowserRouter>
+  );
+};
+
+export default App;

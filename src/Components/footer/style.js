@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Copyrights = styled.footer`
-  font-size: 14px;
   width: 100%;
   height: 60px;
   background-color: #fff;
@@ -16,9 +15,13 @@ export const Copyrights = styled.footer`
     align-items: center;
     justify-content: center;
 
-    a {
-      color: #75dab4;
-      padding-left: 5px;
+    p {
+      font-size: 12px;
+      font-family: "Roboto Mono", sans-serif;
+      a {
+        color: #75dab4;
+        padding-left: 5px;
+      }
     }
   }
 `;

@@ -1,7 +1,18 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import Sidebar from "../components/sidebar";
+import Routes from "../routes";
+
+import firebase from "../firebaseConfig";
 
 const App = () => {
-  return <h1>APP!!</h1>;
+  return (
+    <BrowserRouter>
+      <Sidebar />
+      <Routes />
+    </BrowserRouter>
+  );
 };
 
 export default App;

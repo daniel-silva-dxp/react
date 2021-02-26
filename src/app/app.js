@@ -9,24 +9,22 @@ const App = () => {
   const [user, setUser] = React.useState(null);
 
   const actionLoginDataGoogle = async (u) => {
-    console.log(u);
-    const newUser = {
+    setUser({
       id: u.uid,
       name: u.displayName,
+      email: u.email,
       avatar: u.photoURL,
-    };
-
-    setUser(newUser);
+    });
   };
 
   if (user === null) {
-    return <Login onReceiveGoogle={actionLoginDataGoogle} />;
+    return <Login onReceiveGoogle={actionLoginDataGoogle} setUser={setUser} />;
   }
 
   return (
     <BrowserRouter>
       <Header logout={() => setUser(null)} />
-      <Routes />
+      <Routes user={user} />
       <Footer />
     </BrowserRouter>
   );

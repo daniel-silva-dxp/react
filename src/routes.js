@@ -3,11 +3,11 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Configuracoes from "./pages/configuracoes";
 
-const Routes = () => {
+const Routes = ({ ...props }) => {
   return (
     <Switch>
       <Route exact path="/">
-        <Home />
+        <Home {...props} />
       </Route>
       <Route path="/configuracoes">
         <Configuracoes />

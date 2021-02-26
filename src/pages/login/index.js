@@ -9,7 +9,7 @@ import Form from "../../components/form-login";
 import firebase from "../../firebaseConfig";
 import { Content, Wrap, Paragraphy } from "./style";
 
-const Login = ({ onReceiveGoogle, actionLoginDataFacebook }) => {
+const Login = ({ onReceiveGoogle, setUser }) => {
   const actionLoginGoogle = async () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     const result = await firebase.auth().signInWithPopup(provider);
@@ -21,6 +21,15 @@ const Login = ({ onReceiveGoogle, actionLoginDataFacebook }) => {
     }
   };
 
+  const actionRegisterUser = (data) => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword(data.email, data.password)
+      .then(() => {
+        setUser(data);
+      });
+  };
+
   return (
     <BrowserRouter>
       <Switch>
@@ -29,13 +38,17 @@ const Login = ({ onReceiveGoogle, actionLoginDataFacebook }) => {
             <Wrap>
               <h1>Cadastro</h1>
               <Paragraphy>Crie sua conta, é grátis!</Paragraphy>
-              <FormRegister />
+              <FormRegister
+                onReceiveUser={actionRegisterUser}
+                setUser={setUser}
+              />
               <Paragraphy>
                 Já tem uma conta? <Link to="/">Faça login</Link>
               </Paragraphy>
             </Wrap>
           </Content>
         </Route>
+
         <Route exact path="*">
           <Content>
             <Wrap>

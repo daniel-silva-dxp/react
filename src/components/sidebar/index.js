@@ -1,5 +1,10 @@
 import React from "react";
-import { FaDev, FaHome, FaCog, FaPowerOff } from "react-icons/fa";
+import {
+  TiHeartHalfOutline,
+  TiCogOutline,
+  TiHomeOutline,
+  TiPowerOutline,
+} from "react-icons/ti";
 import ReactTooltip from "react-tooltip";
 import { Link } from "react-router-dom";
 
@@ -10,12 +15,12 @@ const Sidebar = () => {
     <aside>
       <nav className="display-flex align-items-center justify-content-center flex-direction-column">
         <div className="logo display-flex align-items-center justify-content-center">
-          <FaDev />
+          <TiHeartHalfOutline />
         </div>
         <ul className="display-flex align-items-center justify-content-center flex-direction-column">
           <Link to="/">
             <li data-tip data-for="home">
-              <FaHome />
+              <TiHomeOutline />
               <ReactTooltip
                 id="home"
                 textColor="#fff"
@@ -29,7 +34,7 @@ const Sidebar = () => {
           </Link>
           <Link to="/config">
             <li data-tip data-for="config">
-              <FaCog />
+              <TiCogOutline />
               <ReactTooltip
                 id="config"
                 textColor="#fff"
@@ -42,7 +47,7 @@ const Sidebar = () => {
             </li>
           </Link>
           <li data-tip data-for="logout">
-            <FaPowerOff />
+            <TiPowerOutline />
             <ReactTooltip
               id="logout"
               textColor="#fff"

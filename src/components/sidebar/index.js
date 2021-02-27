@@ -3,16 +3,16 @@ import { FaDev, FaHome, FaCog, FaPowerOff } from "react-icons/fa";
 import ReactTooltip from "react-tooltip";
 import { Link } from "react-router-dom";
 
-import { Aside, Nav } from "./styled";
+import "./main.css";
 
 const Sidebar = () => {
   return (
-    <Aside>
-      <Nav>
-        <div className="logo">
+    <aside>
+      <nav className="display-flex align-items-center justify-content-center flex-direction-column">
+        <div className="logo display-flex align-items-center justify-content-center">
           <FaDev />
         </div>
-        <ul>
+        <ul className="display-flex align-items-center justify-content-center flex-direction-column">
           <Link to="/">
             <li data-tip data-for="home">
               <FaHome />
@@ -54,8 +54,8 @@ const Sidebar = () => {
             </ReactTooltip>
           </li>
         </ul>
-      </Nav>
-    </Aside>
+      </nav>
+    </aside>
   );
 };
 

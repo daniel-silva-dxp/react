@@ -23,6 +23,7 @@ export const InputContent = styled.div`
 
   label,
   input {
+    width: 100%;
     font-weight: 600;
     font-family: "Roboto Mono", sans-serif;
   }

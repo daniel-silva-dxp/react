@@ -85,11 +85,14 @@ const App = () => {
     authListener();
   }, []);
 
-  // {
-  //   user: "",
-  //   email: "",
-  //   password: "",
-  // }
+  const actionLoginDataGoogle = async (u) => {
+    setUser({
+      id: u.uid,
+      name: u.displayName,
+      email: u.email,
+      avatar: u.photoURL,
+    });
+  };
 
   return (
     <>
@@ -110,6 +113,8 @@ const App = () => {
           setHasAccount={setHasAccount}
           emailError={emailError}
           passwordError={passwordError}
+          onReceiveGoogle={actionLoginDataGoogle}
+          setUser={setUser}
         />
       )}
     </>

@@ -3,6 +3,8 @@ import { TiHeartHalfOutline } from "react-icons/ti";
 import Button from "../../components/button";
 import Input from "../../components/input";
 
+import firebase from "../../firebaseConfig";
+
 import "./main.css";
 
 const Loginpage = ({
@@ -16,7 +18,19 @@ const Loginpage = ({
   setHasAccount,
   emailError,
   passwordError,
+  onReceiveGoogle,
 }) => {
+  const actionLoginGoogle = async () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const result = await firebase.auth().signInWithPopup(provider);
+
+    if (result) {
+      onReceiveGoogle(result.user);
+    } else {
+      console.log("ERROR");
+    }
+  };
+
   return (
     <section className="container">
       <div className="content display-flex align-items-center justify-content-center flex-direction-column">
@@ -95,7 +109,11 @@ const Loginpage = ({
             </div>
 
             <p className="text-align-center">---------- OU ----------</p>
-            <Button method="button" className="btn btn-large btn-red">
+            <Button
+              method="button"
+              className="btn btn-large btn-red"
+              onClick={actionLoginGoogle}
+            >
               Google
             </Button>
           </form>

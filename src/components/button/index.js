@@ -2,9 +2,9 @@ import React from "react";
 
 import "./main.css";
 
-const Button = ({ method, children }) => {
+const Button = ({ method, children, ...props }) => {
   return (
-    <button type={method} className="btn btn-large btn-dark">
+    <button type={method} {...props}>
       {children}
     </button>
   );

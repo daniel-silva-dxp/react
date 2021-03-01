@@ -10,7 +10,7 @@ button {
 .btn {
   display: inline-block;
   margin: 2px;
-  border: 1px solid #5965e0;
+
   border-radius: 2px;
   text-align: center;
   font-family: "Roboto Mono", monospace;
@@ -26,11 +26,21 @@ button {
   border-radius: 3px;
   font-size: 14px;
 }
-.btn-dark {
+.btn-default {
   color: #fff;
   background: #5965e0;
 }
-.btn-dark:hover {
+.btn-default:hover {
   background: #fff;
   color: #5965e0;
+  border: 1px solid #5965e0;
+}
+.btn-red {
+  color: #fff;
+  background: #f00;
+}
+.btn-red:hover {
+  background: #fff;
+  color: #f00;
+  border: 1px solid #f00;
 }

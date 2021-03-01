@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 import "./main.css";
 
-const Sidebar = () => {
+const Sidebar = ({ handleLogout }) => {
   return (
     <aside>
       <nav className="display-flex align-items-center justify-content-center flex-direction-column">
@@ -46,7 +46,7 @@ const Sidebar = () => {
               </ReactTooltip>
             </li>
           </Link>
-          <li data-tip data-for="logout">
+          <li data-tip data-for="logout" onClick={handleLogout}>
             <TiPowerOutline />
             <ReactTooltip
               id="logout"

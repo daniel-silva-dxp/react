@@ -1,0 +1,45 @@
+.content {
+  width: 100%;
+  max-width: 500px;
+  height: 100vh;
+  margin: 0 auto;
+}
+.content .login {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 60px 10px;
+}
+.content h1 {
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.content p {
+  color: #666666;
+}
+.content .logo {
+  font-size: 56px;
+  color: #5965e0;
+}
+.content p {
+  display: inline-block;
+  width: 100%;
+  font-size: 12px;
+  color: #a3a2a1;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.text-align-right {
+  text-align: right;
+}
+.text-align-center {
+  text-align: center;
+}
+.has-account {
+  color: #28f5be;
+  cursor: pointer;
+}
+.has-account:hover {
+  color: #000000;
+}
